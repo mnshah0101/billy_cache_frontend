@@ -58,6 +58,10 @@ export function Dashboard() {
 
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
+  if (!API_BASE_URL) {
+    console.error("API_URL not set");
+  }
+
   // Fetch top K similar questions from the Flask backend
   async function fetchTopKSimilarQuestions(query) {
     setLoading(true);

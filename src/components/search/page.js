@@ -56,7 +56,7 @@ export function Dashboard() {
   const [newSQLQuery, setNewSQLQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_BASE_URL = "http://127.0.0.1:5000"; // Adjust based on your Flask server URL
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
   // Fetch top K similar questions from the Flask backend
   async function fetchTopKSimilarQuestions(query) {

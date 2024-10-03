@@ -63,12 +63,12 @@ export function Dashboard() {
   }
 
   // Fetch top K similar questions from the Flask backend
-  async function fetchTopKSimilarQuestions(query) {
+  async function fetchTopKSimilarQuestions(query, k=5) {
     setLoading(true);
     console.log(query);
     try {
       const response = await fetch(
-        `${API_BASE_URL}/search?question=${encodeURIComponent(query)}&k=5`
+        `${API_BASE_URL}/search?question=${encodeURIComponent(query)}&k=${k}`
       );
       if (response.ok) {
         const data = await response.json();

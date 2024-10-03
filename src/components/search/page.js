@@ -86,7 +86,7 @@ export function Dashboard() {
   }
 
   useEffect(() => {
-    fetchTopKSimilarQuestions(" ");
+    fetchTopKSimilarQuestions(" ", k=100);
     }, []);
 
   useEffect(() => {
